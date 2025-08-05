@@ -15,6 +15,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 # Application definition
 
@@ -38,6 +42,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -101,6 +107,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'accounts.auth.JWTAuthenticationFromCookie',
+    ],
+}
 
 
 # Static files (CSS, JavaScript, Images)
