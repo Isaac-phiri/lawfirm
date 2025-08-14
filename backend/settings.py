@@ -55,7 +55,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'tmp'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,9 +106,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # or your email provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'your-email@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'your-app-password')
-DEFAULT_FROM_EMAIL = 'Anderson & Associates <noreply@lawfirm.com>'
+EMAIL_HOST_USER = 'iphiri143@gmail.com'
+EMAIL_HOST_PASSWORD = 'oaga tvji wuup iyjw'
+DEFAULT_FROM_EMAIL = 'KGM Legal Practitioner <noreply@kgmlegalpractitioners.com>'
 CONTACT_EMAIL = 'info@lawfirm.com'  # Where contact form submissions go
 
 

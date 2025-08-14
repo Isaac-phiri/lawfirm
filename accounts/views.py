@@ -32,6 +32,7 @@ class ContactSubmissionView(APIView):
             if serializer.is_valid():
                 # Save the contact submission
                 contact = serializer.save()
+                print(contact)
                 
                 # Send notification email to law firm
                 try:
@@ -92,7 +93,7 @@ class ContactSubmissionView(APIView):
         send_mail(
             subject=subject,
             message=plain_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
+            from_email=settings.EMAIL_HOST_USER,
             recipient_list=[settings.CONTACT_EMAIL],
             html_message=html_message,
             fail_silently=False,
@@ -114,7 +115,7 @@ class ContactSubmissionView(APIView):
         send_mail(
             subject=subject,
             message=plain_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
+            from_email=settings.EMAIL_HOST_USER,
             recipient_list=[contact.email],
             html_message=html_message,
             fail_silently=False,
