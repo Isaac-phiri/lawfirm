@@ -101,7 +101,7 @@ class ContactSubmissionView(APIView):
     
     def send_client_confirmation(self, contact):
         """Send confirmation email to client"""
-        subject = "Thank you for contacting Anderson & Associates"
+        subject = "Thank you for contacting KGM Legal practitioners"
         
         # Create HTML email content
         html_message = render_to_string('emails/client_confirmation.html', {

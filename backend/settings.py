@@ -109,7 +109,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'iphiri143@gmail.com'
 EMAIL_HOST_PASSWORD = 'oaga tvji wuup iyjw'
 DEFAULT_FROM_EMAIL = 'KGM Legal Practitioner <noreply@kgmlegalpractitioners.com>'
-CONTACT_EMAIL = 'info@lawfirm.com'  # Where contact form submissions go
+CONTACT_EMAIL = 'kgmlp@gmail.com'  # Where contact form submissions go
 
 
 # Internationalization
