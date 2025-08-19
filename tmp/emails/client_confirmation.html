@@ -1,0 +1,52 @@
+<!-- templates/emails/client_confirmation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thank you for contacting us</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: #2563eb;">KGM Legal Practitioners</h1>
+            <p style="color: #6b7280;">Attorneys at Law</p>
+        </div>
+        
+        <h2 style="color: #1e40af;">Thank you for contacting us!</h2>
+        
+        <p>Dear {{ contact.name }},</p>
+        
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e40af;">What happens next?</h3>
+            <ul style="margin: 0; padding-left: 20px;">
+                <li>One of our attorneys will review your case details</li>
+                <li>We'll contact you within 24 hours to schedule a consultation</li>
+                <li>During the consultation, we'll discuss your options and next steps</li>
+                <li>All consultations are confidential and most are free of charge</li>
+            </ul>
+        </div>
+        
+        <div style="background-color: #fef2f2; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #dc2626;">Need immediate assistance?</h3>
+            <p style="margin-bottom: 10px;">If you have an urgent legal matter, please call our emergency line:</p>
+            <p style="font-size: 18px; font-weight: bold; color: #dc2626;">(097) 123-4568</p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <p>Best regards,<br>
+            <strong>KGM Legal Practitioners</strong><br>
+            Munali Mall<br>
+            J8GW+766, 12th St, Lusaka<br>
+            Phone: (0772107515)<br>
+            Email: kgmlp@gmail.com</p>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+            <p style="color: #6b7280; font-size: 12px;">
+                This email was sent in response to your inquiry on our website. 
+                If you did not submit this form, please contact us immediately.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

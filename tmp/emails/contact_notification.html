@@ -1,0 +1,32 @@
+<!-- templates/emails/contact_notification.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KGMLP Contact Form Submission</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #2563eb;">Web : KGM Legal Practitioners</h2>
+        
+        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e40af;">Contact Information</h3>
+            <p><strong>Name:</strong> {{ contact.name }}</p>
+            <p><strong>Email:</strong> {{ contact.email }}</p>
+            <p><strong>Phone:</strong> {{ contact.phone|default:"Not provided" }}</p>
+            <p><strong>Submitted:</strong> {{ contact.created_at|date:"F j, Y g:i A" }}</p>
+        </div>
+        
+        <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #797979;">Message</h3>
+            <p style="white-space: pre-wrap;">{{ contact.message }}</p>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+            <p style="color: #6b7280; font-size: 14px;">
+                This email was automatically generated from the law firm website contact form.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

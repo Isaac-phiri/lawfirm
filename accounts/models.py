@@ -56,3 +56,19 @@ class Booking(models.Model):
     def __str__(self):
         return self.name
 
+class Contact(models.Model):
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_responded = models.BooleanField(default=False)
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Contact Submission'
+        verbose_name_plural = 'Contact Submissions'
+    
+    def __str__(self):
+        return f"{self.name}"

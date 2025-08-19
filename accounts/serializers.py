@@ -65,3 +65,23 @@ class BookingSerializer(serializers.ModelSerializer):
                 "You have already booked this service at the selected date and time."
             )
         return attrs
+    
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = [
+            'id', 'name', 'email', 'phone','message', 'created_at', 'is_responded'
+        ]
+        read_only_fields = ['id', 'created_at', 'is_responded']
+    
+    def validate_email(self, value):
+        """Validate email format"""
+        if not value or '@' not in value:
+            raise serializers.ValidationError("Please enter a valid email address.")
+        return value.lower()
+    
+    def validate_message(self, value):
+        """Validate message length"""
+        if len(value.strip()) < 5:
+            raise serializers.ValidationError("Please provide more details about your legal matter.")
+        return value.strip()

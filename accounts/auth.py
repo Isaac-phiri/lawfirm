@@ -5,22 +5,27 @@ from rest_framework.exceptions import AuthenticationFailed
 from accounts.models import User  # adjust path to your User model
 
 
-class JWTAuthenticationFromCookie(BaseAuthentication):
+class JWTAuthentication(BaseAuthentication):
     def authenticate(self, request):
+        # Try to get token from cookie first
         token = request.COOKIES.get('jwt')
-
+        
         if not token:
-            return None  # DRF will move on to the next auth class
+            # Fallback to Authorization header
+            auth_header = request.headers.get('Authorization')
+            if auth_header and auth_header.startswith('Bearer '):
+                token = auth_header.split(' ')[1]
+        
+        if not token:
+            return None
 
         try:
             payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+            user = User.objects.get(id=payload['id'])
+            return (user, token)
         except jwt.ExpiredSignatureError:
             raise AuthenticationFailed('Token expired')
         except jwt.InvalidTokenError:
             raise AuthenticationFailed('Invalid token')
-
-        user = User.objects.filter(id=payload['id']).first()
-        if user is None:
+        except User.DoesNotExist:
             raise AuthenticationFailed('User not found')
-
-        return (user, None)

@@ -4,5 +4,7 @@ from .models import *
 admin.site.register(User)
 admin.site.register(Booking)
 admin.site.register(Services)
+admin.site.register(Contact)
+
 
 

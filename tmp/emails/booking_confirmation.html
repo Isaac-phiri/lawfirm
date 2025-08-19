@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+    <p>Dear {{ user.first_name }} {{ user.last_name }},</p>
+    
+    <p>Thank you for booking a consultation with us. Here are your appointment details:</p>
+    
+    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+        <h3>Appointment Details:</h3>
+        <p><strong>Service:</strong> {{ service.name }}</p>
+        <p><strong>Date:</strong> {{ booking.date }}</p>
+        <p><strong>Time:</strong> {{ booking.time }}</p>
+        <p><strong>Duration:</strong> {{ service.duration }} minutes</p>
+    </div>
+    
+    <p>We will contact you within 2 hours to confirm your appointment and provide any additional instructions.</p>
+    
+    <p>If you need to make any changes or have questions, please contact us at (555) 123-4568.</p>
+    
+    <p>Best regards,<br>Legal Team</p>
+</body>
+</html>

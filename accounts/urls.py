@@ -10,9 +10,10 @@ urlpatterns = [
     path('services/', ServicesViewSet.as_view({'get': 'list'})),
     path('service/<int:pk>/', ServicesViewSet.as_view({'get': 'retrieve'})),
 
-    path('bookings/', BookingViewSet.as_view({'get': 'list','post': 'create',})),
-    path('booking/<int:pk>/', BookingViewSet.as_view({'get': 'retrieve','put': 'update','patch': 'partial_update','delete': 'destroy'})),
+    path('bookings/', BookingViewSet.as_view(), name="bookings"),
+    
+    path('contact/', ContactView.as_view(), name='contact_submission'),
 
-
+    path('csrf/', CSRFView.as_view(), name='csrf'),
 
 ]
