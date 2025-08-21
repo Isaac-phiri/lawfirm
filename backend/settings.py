@@ -17,8 +17,8 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
+    "https://lawfirm-frontend-gamma.vercel.app",
     "http://localhost:3000",
-    "http://localhost:8000",
 ]
 
 
